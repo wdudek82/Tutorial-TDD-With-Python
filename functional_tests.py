@@ -6,6 +6,7 @@ class NewVisitorTest(unittest.TestCase):
 
     def setUp(self):
         self.browser = webdriver.Firefox()
+        self.browser.implicitly_wait(3)
 
     def tearDown(self):
         self.browser.quit()
@@ -17,6 +18,8 @@ class NewVisitorTest(unittest.TestCase):
 
         # She notices the page title and header mention to-do lists
         self.assertIn('To-Do', self.browser.title, 'Nope')
+
+        self.fail('Remember to finish the test!')
 
         # She is invited to enter a to-do item straight away
 
@@ -41,4 +44,4 @@ class NewVisitorTest(unittest.TestCase):
 
 
 if __name__ == '__main__':
-    unittest.main(warnings=None)
+    unittest.main(warnings='ignore')
