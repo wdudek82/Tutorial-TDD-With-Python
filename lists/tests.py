@@ -1,8 +1,4 @@
-from django.core.urlresolvers import resolve
 from django.test import TestCase
-from django.http import HttpRequest
-
-from .views import home_page
 
 
 class HomePageTest(TestCase):
@@ -20,5 +16,4 @@ class HomePageTest(TestCase):
         # self.assertTrue(html.startswith('<html lang="en">'))
         # self.assertIn('<title>To-Do lists</title>', html)
         # self.assertTrue(html.strip().endswith('</html>'))  # Remove any whitespace at the end of the .html file
-
         self.assertTemplateUsed(response, 'lists/home.html')
